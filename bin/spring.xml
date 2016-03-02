@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="duck" class="org.java.strategy.Duck">
+		<property name="flybehavior" ref="flywithwings"/>
+		<property name="quackbehavior" ref="squeak"/>
+		<property name="duckType" ref="mallardDuck"/>
+	</bean>
+	<bean id="duck2" class="org.java.strategy.Duck">
+		<property name="flybehavior" ref="cannotfly"/>
+		<property name="quackbehavior" ref="cannotquack"/>
+		<property name="duckType" ref="woodenDuck"/>
+	</bean>
+	
+	<bean id="flywithwings" class="org.java.strategy.FlyWithWings"/>
+	<bean id="cannotfly" class="org.java.strategy.CannotFly"/>
+	<bean id="quack" class="org.java.strategy.Quack"/>
+	<bean id="cannotquack" class="org.java.strategy.CannotQuack"/>
+	<bean id="squeak" class="org.java.strategy.Squeak"/>
+	
+	<bean id="mallardDuck" class="org.java.strategy.MallardDuck"/>
+	<bean id="woodenDuck" class="org.java.strategy.WoodenDuck"/>
+</beans>
